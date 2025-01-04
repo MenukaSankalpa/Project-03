@@ -15,7 +15,14 @@ inputSlider.addEventListener('input', ()=>{
 }); 
 
 genBtn.addEventListener('click', ()=>{
-    passBsx.value = generatePassword();
+    passBox.value = generatePassword();
 });
 
 //Function to generate password 
+function generatePassword(){
+    let genPassword = "";
+
+    genPassword = Math.floor(Math.random() * 100);
+    return genPassword;
+
+}
