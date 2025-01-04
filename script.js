@@ -39,7 +39,11 @@ function generatePassword(){
         return genPassword;
     }
 
-    genPassword = allChars.charAt(Math.floor(Math.random() * allChars.length));
+    let i = 1;
+    while(i<=inputSlider.value){
+        genPassword += allChars.charAt(Math.floor(Math.random() * allChars.length));
+        i++;
+    }
     return genPassword;
 
 }  
