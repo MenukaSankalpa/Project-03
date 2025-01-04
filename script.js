@@ -21,7 +21,7 @@ genBtn.addEventListener('click', ()=>{
 let lowerChars = "abcdefghijklmnopqrstuvwxyz"; 
 let upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let allNumbers = "0123456789";
-let allSymbols = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+let allSymbols = "!#$%&'()*+,-./:;<=>?@[\]^_{|}";
 
 
 //Function to generate password 
@@ -29,7 +29,17 @@ function generatePassword(){
     let genPassword = "";
     let allChars = "";
 
-    //genPassword = upperChars.charAt(Math.floor(Math.random() * upperChars.length));
+    allChars += lowercase.checked ? lowerChars : "";
+    allChars += uppercase.checked ? upperChars : "";
+    allChars += numbers.checked ? allNumbers : "";
+    allChars += symbols.checked ? allSymbols : "";
+     
+
+    if(allChars == "" || allChars.length == 0){
+        return genPassword;
+    }
+
+    genPassword = allChars.charAt(Math.floor(Math.random() * allChars.length));
     return genPassword;
 
 }  
