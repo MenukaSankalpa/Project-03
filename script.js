@@ -18,11 +18,18 @@ genBtn.addEventListener('click', ()=>{
     passBox.value = generatePassword();
 });
 
+let lowerChars = "abcdefghijklmnopqrstuvwxyz"; 
+let upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let allNumbers = "0123456789";
+let allSymbols = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+
 //Function to generate password 
 function generatePassword(){
     let genPassword = "";
+    let allChars = "";
 
-    genPassword = Math.floor(Math.random() * 100);
+    //genPassword = upperChars.charAt(Math.floor(Math.random() * upperChars.length));
     return genPassword;
 
-}
+}  
